@@ -1,8 +1,4 @@
-/**
- * For more details on how to configure Wrangler, refer to:
- * https://developers.cloudflare.com/workers/wrangler/configuration/
- */
-/**
+/** fichier wrangler.jsonc
  * For more details on how to configure Wrangler, refer to:
  * https://developers.cloudflare.com/workers/wrangler/configuration/
  */
@@ -15,15 +11,18 @@
 		"nodejs_compat",
 		"global_fetch_strictly_public"
 	],
+
 	"assets": {
 		"binding": "ASSETS",
 		"directory": ".open-next/assets"
 	},
+
 	"images": {
 		// Enable image optimization
 		// see https://opennext.js.org/cloudflare/howtos/image
 		"binding": "IMAGES"
 	},
+
 	"services": [
 		{
 			// Self-reference service binding, the service name must match the worker name
@@ -32,21 +31,30 @@
 			"service": "fvsoft1963"
 		}
 	],
+
 	"observability": {
 		"enabled": true
 	},
-	"upload_source_maps": true
+
+	"upload_source_maps": true,
+
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
 	 */
 	// "placement": {  "mode": "smart" }
+
 	/**
-	 * Bindings
-	 * Bindings allow your Worker to interact with resources on the Cloudflare Developer Platform, including
-	 * databases, object storage, AI inference, real-time communication and more.
-	 * https://developers.cloudflare.com/workers/runtime-apis/bindings/
+	 * Bindings Cloudflare KV pour le mode Maintenance
 	 */
+	"kv_namespaces": [
+		{
+			"binding": "MAINTENANCE_KV",
+			"id": "84d5e8385e84442caa44a4cbe567b13c",
+			"preview_id": "7e42d5ca10f0415c98797cd98d702968"
+		}
+	]
+
 	/**
 	 * Environment Variables
 	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables

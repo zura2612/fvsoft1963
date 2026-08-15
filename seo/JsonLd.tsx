@@ -1,4 +1,4 @@
-// components/JsonLd.tsx
+// seo/JsonLd.tsx
 export default function JsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",

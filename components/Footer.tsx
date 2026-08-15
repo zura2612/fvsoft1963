@@ -4,12 +4,14 @@ import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
+const styleHover = "hover:text-blue-600 dark:hover:text-blue-400 transition-colors";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="w-full border-t border-gray-800 dark:border-white bg-gray-50 dark:bg-gray-950 text-gray-700 dark:text-gray-300">
-      <div className="container mx-auto px-4 sm:px-6 py-2">
+      <div className="container mx-auto px-4 sm:px-6 py-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           
           {/* Colonne 1 : Présentation & Coordonnées */}
@@ -37,13 +39,13 @@ export default function Footer() {
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
                 <Mail size={16} className="text-blue-600 dark:text-blue-400 shrink-0" />
-                <a href={`mailto:${siteConfig.contact.email}`} className="hover:underline">
+                <a href={`mailto:${siteConfig.contact.email}`} className={`hover:underline ${styleHover}`}>
                   {siteConfig.contact.email}
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={16} className="text-blue-600 dark:text-blue-400 shrink-0" />
-                <a href={`tel:${siteConfig.contact.phone}`} className="hover:underline">
+                <a href={`tel:${siteConfig.contact.phone}`} className={`hover:underline ${styleHover}`}>
                   {siteConfig.contact.phone}
                 </a>
               </div>
@@ -61,17 +63,17 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <Link href="/" className={styleHover}>
                   Accueil
                 </Link>
               </li>
               <li>
-                <Link href="/realisations" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <Link href="/realisations" className={styleHover}>
                   Réalisations
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <Link href="/contact" className={styleHover}>
                   Contact
                 </Link>
               </li>
@@ -110,7 +112,7 @@ export default function Footer() {
                   alt="LinkedIn"
                   width={30}
                   height={30}
-                  className="shrink-0"
+                  className="shrink-0 dark:invert"
                 />
               </a>
 
@@ -120,11 +122,14 @@ export default function Footer() {
         </div>
 
         {/* Séparateur & Bottom Bar */}
-        <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 dark:text-gray-400 gap-4">
+        <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-800 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 dark:text-white gap-4">
           <p>© {currentYear} {siteConfig.name}. Tous droits réservés.</p>
-          <div className="flex gap-4">
-            <Link href="/mentions-legales" className="hover:underline">
+          <div className="flex gap-2">
+            <Link href="/legal/mentions-legales-fr.pdf" target="_blank" rel="noopener noreferrer" className={`hover:underline ${styleHover}`}>
               Mentions Légales
+            </Link>
+            <Link href="/legal/politique-confidentialite-fr.pdf" target="_blank" rel="noopener noreferrer" className={`hover:underline ${styleHover}`}>
+              Confidentialité
             </Link>
           </div>
         </div>

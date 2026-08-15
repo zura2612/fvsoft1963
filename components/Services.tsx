@@ -104,7 +104,7 @@ const cardVariants: Variants = {
 
 export default function Services() {
   return (
-    <section className="py-2 rounded-2xl bg-white dark:bg-black border border-black">
+    <section className="py-6 rounded-2xl bg-white dark:bg-black border border-black">
       <div className="container mx-auto px-4 sm:px-6">
         
         {/* En-tête de section */}
@@ -113,7 +113,7 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="max-w-2xl mx-auto text-center mb-12 md:mb-16"
+          className="max-w-2xl mx-auto text-center mb-8 md:mb-12"
         >
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
             Nos Services & Prestations
@@ -129,7 +129,7 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6"
         >
           {services.map((service) => {
             const Icon = service.icon;

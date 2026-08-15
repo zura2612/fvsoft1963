@@ -10,7 +10,7 @@ export const siteConfig = {
   author: "François Vauchot",
   contact: {
     email: "contact@fvsoft1963.com",
-    phone: "+33 (0)6 52 72 85 69",
+    phone: "+33 6 52 72 85 69",
     location: "Lot-et-Garonne, France",
   },
   links: {

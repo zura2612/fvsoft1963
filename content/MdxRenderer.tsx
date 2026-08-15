@@ -1,4 +1,4 @@
-// components/MdxRenderer.tsx
+// content/MdxRenderer.tsx
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Image from 'next/image';
 

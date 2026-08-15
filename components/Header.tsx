@@ -21,7 +21,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-800 dark:border-white bg-white/80 dark:bg-gray-950/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-black dark:border-white bg-white/80 dark:bg-black/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6">
         
         {/* Logo avec favicon */}
@@ -59,7 +59,7 @@ export default function Header() {
                 {isActive && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute -bottom-[21px] left-0 right-0 h-[2px] bg-blue-600 dark:bg-blue-400"
+                    className="absolute -bottom-5.25 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-400"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}

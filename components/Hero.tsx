@@ -1,7 +1,7 @@
 // components/Hero.tsx
 "use client";
 
-import React from "react";
+//import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
@@ -76,7 +76,7 @@ export default function Hero({ className = "" }: HeroProps) {
           className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white dark:text-white transition-colors"
         >
           Conception & Développement <br className="hidden sm:inline" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-600 to-purple-700 dark:from-blue-300 dark:via-indigo-200 dark:to-purple-300">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-700 via-indigo-600 to-purple-700 dark:from-blue-300 dark:via-indigo-200 dark:to-purple-300">
             d'applications Web High-Tech
           </span>
         </motion.h1>

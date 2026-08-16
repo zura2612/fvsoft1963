@@ -4,16 +4,22 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build",
+		"build:next": "next build",
+		"build": "opennextjs-cloudflare",
 		"start": "next start",
 		"lint": "next lint",
 		"deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
 		"upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
 		"preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
 		"cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts",
-                "maintenance:toggle": "node scripts/toggle-maintenance.mjs"
+		"maintenance:prod:on": "wrangler kv key put --binding=MAINTENANCE_KV MAINTENANCE_MODE true --preview false --remote",
+		"maintenance:prod:off": "wrangler kv key put --binding=MAINTENANCE_KV MAINTENANCE_MODE false --preview false --remote",
+		"maintenance:preview:on": "wrangler kv key put --binding=MAINTENANCE_KV MAINTENANCE_MODE true --preview --remote",
+		"maintenance:preview:off": "wrangler kv key put --binding=MAINTENANCE_KV MAINTENANCE_MODE false --preview --remote",
+		"maintenance:toggle": "node scripts/toggle-maintenance.mjs"
 	},
 	"dependencies": {
+		"@hookform/resolvers": "^5.8.0",
 		"@opennextjs/cloudflare": "^1.19.9",
 		"framer-motion": "^13.0.0",
 		"gray-matter": "^4.0.3",
@@ -23,9 +29,13 @@
 		"next-themes": "^0.4.6",
 		"react": "^19.1.7",
 		"react-dom": "^19.1.7",
-		"resend": "^6.18.1"
+		"react-hook-form": "^7.85.0",
+		"resend": "^6.18.1",
+		"sonner": "^2.0.8",
+		"zod": "^4.4.3"
 	},
 	"devDependencies": {
+		"@cloudflare/workers-types": "^5.20260815.1",
 		"@eslint/eslintrc": "^3",
 		"@tailwindcss/postcss": "^4",
 		"@types/node": "^20.19.43",

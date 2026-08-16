@@ -4,7 +4,8 @@
 import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useMotionValue, animate } from "framer-motion";
+//import { motion, useMotionValue, animate } from "framer-motion";
+import { motion, useMotionValue, animate, Variants } from "framer-motion";
 import { REALISATIONS } from "../../data/realisations";
 
 // Variantes d'animation pour l'apparition séquentielle
@@ -18,7 +19,7 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,

@@ -1,6 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import Header from "@/components/Header";
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   },
   description:
     "Site vitrine et portfolio d'ingénierie logicielle. Conception d'applications web modernes sur Next.js et Cloudflare.",
-  icons: { icon: "/favicon.ico", },
+  icons: { icon: "/favicon.ico" },
   openGraph: {
     title: "fvsoft1963 | Développeur Web & Full-Stack",
     description:
@@ -43,7 +44,7 @@ export default function RootLayout({
       <head>
         <JsonLd />
       </head>
-      <body className={`${inter.className} min-h-screen flex flex-col bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased`}>
+      <body className={`${inter.className} min-h-screen flex flex-col bg-white dark:bg-gray-950 text-black dark:text-white antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -53,6 +54,9 @@ export default function RootLayout({
           <Header />
           <main className="flex-1 py-2 sm:py-4">{children}</main>
           <Footer />
+
+          {/* Intégration globale des Toasts (Sonner) */}
+          <Toaster position="top-right" richColors closeButton />
         </ThemeProvider>
       </body>
     </html>

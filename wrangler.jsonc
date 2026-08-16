@@ -33,7 +33,7 @@
 	],
 
 	"observability": {
-		"enabled": true
+		"enabled": true //logs interceptés et consultables dans le dashboard Cloudflare Worker
 	},
 
 	"upload_source_maps": true,
@@ -45,13 +45,13 @@
 	// "placement": {  "mode": "smart" }
 
 	/**
-	 * Bindings Cloudflare KV pour le mode Maintenance
+	 * Bindings Cloudflare MAINTENANCE_KV pour le mode Maintenance
 	 */
 	"kv_namespaces": [
 		{
-			"binding": "MAINTENANCE_KV",
-			"id": "84d5e8385e84442caa44a4cbe567b13c",
-			"preview_id": "7e42d5ca10f0415c98797cd98d702968"
+		  "binding": "MAINTENANCE_KV",
+		  "id": "84d5e8385e84442caa44a4cbe567b13c",
+                  "preview_id": "7e42d5ca10f0415c98797cd98d702968"
 		}
 	]
 
